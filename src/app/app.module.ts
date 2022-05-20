@@ -10,7 +10,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
-
 // custom pipes
 import { ShortNumberPipe } from './pipes/short-number.pipe';
 
@@ -18,10 +17,8 @@ import { ShortNumberPipe } from './pipes/short-number.pipe';
 import { CryptocurrenciesComponent } from './components/cryptocurrencies/cryptocurrencies.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderComponent } from './components/header/header.component';
-import { DominanceComponent } from './components/dominance/dominance.component';
 import { SmartphoneAppComponent } from './components/smartphone-app/smartphone-app.component';
 import { HeroCoinsComponent } from './components/hero-coins/hero-coins.component';
-import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,11 +26,9 @@ import { FooterComponent } from './components/footer/footer.component';
     CryptocurrenciesComponent,
     NavbarComponent,
     HeaderComponent,
-    DominanceComponent,
     SmartphoneAppComponent,
     HeroCoinsComponent,
-    ShortNumberPipe,
-    FooterComponent,
+    ShortNumberPipe
   ],
   imports: [
     BrowserModule,

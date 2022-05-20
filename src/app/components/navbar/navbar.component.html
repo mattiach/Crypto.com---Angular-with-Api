@@ -1,5 +1,4 @@
 <nav class="nav">
-
     <!-- Hamburger Menù -->
     <input type="checkbox" id="nav-check">
     <div class="nav-header">
@@ -18,15 +17,13 @@
     <!-- Navigation Menù with links -->
     <div class="nav-links">
         <ul>
-            <li [routerLink]="['/home']" (click)="changeUrl()">Home</li>
             <li [routerLink]="['/mercati']" (click)="mercatiUrl()">Prices</li>
-            <li [routerLink]="['/dominance']" (click)="changeUrl()">Dominance</li>
             <li [routerLink]="['/app']" (click)="changeUrl()">App</li>
             <li (click)="changeUrl()">Trade</li>
         </ul>
     </div>
 
-    <!-- scrolling indicator -->
+    <!-- Scrolling indicator -->
     <div *ngIf="indicator > 20 && route == true">
         <div class="progress-container">
             <div class="progress-bar" id="myBar" [style.width]="indicator + 'px'"></div>
