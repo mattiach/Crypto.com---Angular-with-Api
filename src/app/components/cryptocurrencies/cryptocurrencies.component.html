@@ -1,0 +1,43 @@
+<app-header></app-header>
+<table>
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>&nbsp;</td>
+            <td>Coin</td>
+            <td class="text-left">Symbol</td>
+            <td>Price</td>
+            <td>24H Change</td>
+            <td class="extra-data">24H High</td>
+            <td class="extra-data">24H Low</td>
+        </tr>
+    </thead>
+    <tbody *ngFor="let coin of coins">
+        <tr>
+            <td>{{coin.market_cap_rank}}</td>
+            <td>
+                <img src="{{coin.image}}" alt="{{coin.symbol}}">
+            </td>
+            <td>
+                {{coin.name}}
+            </td>
+            <td class="text-center">
+                {{coin.symbol | uppercase}}
+            </td>
+            <td [ngClass]="{percentualeVerde: coin.price_change_percentage_24h > 0}" class="percentualeRossa">
+                {{coin.current_price | currency: 'USD'}}
+            </td>
+            <td [ngClass]="{percentualeVerde: coin.price_change_percentage_24h > 0}" class="percentualeRossa">
+                {{coin.price_change_percentage_24h | number: '1.0-1'}}&percnt;
+            </td>
+            <td [ngClass]="{percentualeVerde: coin.price_change_percentage_24h > 0}"
+                class="percentualeRossa extra-data">
+                {{coin.high_24h | currency: 'USD'}}
+            </td>
+            <td [ngClass]="{percentualeVerde: coin.price_change_percentage_24h > 0}"
+                class="percentualeRossa extra-data">
+                {{coin.low_24h | currency: 'USD'}}
+            </td>
+        </tr>
+    </tbody>
+</table>

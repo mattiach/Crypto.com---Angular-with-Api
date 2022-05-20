@@ -1,0 +1,35 @@
+<nav class="nav">
+
+    <!-- Hamburger Menù -->
+    <input type="checkbox" id="nav-check">
+    <div class="nav-header">
+        <div class="nav-title" [routerLink]="['/home']">
+            <img src="assets/logo_crypto.com.svg" alt="Crypto.com">
+        </div>
+    </div>
+    <div class="nav-btn">
+        <label for="nav-check" (click)="hamburgerMenu()" id="hamburger">
+            <span [ngClass]="{animazioneSpan1: hamburger == true}"></span>
+            <span></span>
+            <span [ngClass]="{animazioneSpan3: hamburger == true}"></span>
+        </label>
+    </div>
+
+    <!-- Navigation Menù with links -->
+    <div class="nav-links">
+        <ul>
+            <li [routerLink]="['/home']" (click)="changeUrl()">Home</li>
+            <li [routerLink]="['/mercati']" (click)="mercatiUrl()">Prices</li>
+            <li [routerLink]="['/dominance']" (click)="changeUrl()">Dominance</li>
+            <li [routerLink]="['/app']" (click)="changeUrl()">App</li>
+            <li (click)="changeUrl()">Trade</li>
+        </ul>
+    </div>
+
+    <!-- scrolling indicator -->
+    <div *ngIf="indicator > 20 && route == true">
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar" [style.width]="indicator + 'px'"></div>
+        </div>
+    </div>
+</nav>
