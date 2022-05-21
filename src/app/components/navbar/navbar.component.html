@@ -17,9 +17,9 @@
     <!-- Navigation Menù with links -->
     <div class="nav-links">
         <ul>
-            <li [routerLink]="['/mercati']" (click)="mercatiUrl()">Prices</li>
+            <li [routerLink]="['/']" (click)="changeUrl()">Home</li>
             <li [routerLink]="['/app']" (click)="changeUrl()">App</li>
-            <li (click)="changeUrl()">Trade</li>
+            <li [routerLink]="['/mercati']" (click)="mercatiUrl()">Prices</li>
         </ul>
     </div>
 

@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 // custom pipes
 import { ShortNumberPipe } from './pipes/short-number.pipe';
@@ -20,6 +21,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SmartphoneAppComponent } from './components/smartphone-app/smartphone-app.component';
 import { HeroCoinsComponent } from './components/hero-coins/hero-coins.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,8 @@ import { HeroCoinsComponent } from './components/hero-coins/hero-coins.component
     HeaderComponent,
     SmartphoneAppComponent,
     HeroCoinsComponent,
-    ShortNumberPipe
+
+    ShortNumberPipe // pipe
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { HeroCoinsComponent } from './components/hero-coins/hero-coins.component
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    CarouselModule
+    CarouselModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

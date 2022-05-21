@@ -1,3 +1,32 @@
+/* === Angular Pagination === */
+.my-pagination /deep/ .ngx-pagination .current {
+    color: black;
+    background-color: #ffdf77;
+}
+
+.my-pagination /deep/ .ngx-pagination li {
+    background-color: whitesmoke;
+}
+
+.my-pagination /deep/ .ngx-pagination {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 10px 10px 0px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.my-pagination /deep/ .ngx-pagination li {
+    color: black;
+}
+
+
+/* Input searchbar */
+input {
+    width: 80%;
+}
+
+/* === Table === */
 table img {
     width: 40px;
 }
@@ -6,15 +35,13 @@ table {
     color: whitesmoke;
     margin: 0 auto;
     max-width: 1200px;
+    min-width: 400px;
     border-collapse: separate;
     padding: 10px;
     border-spacing: 0px;
 }
 
-thead td {
-    border-bottom: 2px solid rgba(245, 245, 245, 0.548);
-}
-
+thead td { border-bottom: 2px solid rgba(245, 245, 245, 0.548);}
 
 table td {
     margin: 0px 10px;
@@ -23,24 +50,16 @@ table td {
     cursor: pointer;
 }
 
-
 tr {
     background-color: #0b223c;
 }
 
-.center {
-    text-align: center;
-}
-
-.percentualeVerde {
-    color: green !important;
-}
-
-.percentualeRossa {
-    color: brown;
-}
+.percentualeVerde { color: green !important;}
+.percentualeRossa { color: brown; }
 
 
+
+/* Media Queries */
 @media only screen and (min-width: 1300px) {
     table td {
         padding: 5px 10px;
