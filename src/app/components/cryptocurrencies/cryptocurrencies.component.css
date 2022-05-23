@@ -41,7 +41,9 @@ table {
     border-spacing: 0px;
 }
 
-thead td { border-bottom: 2px solid rgba(245, 245, 245, 0.548);}
+thead td {
+    border-bottom: 2px solid rgba(245, 245, 245, 0.548);
+}
 
 table td {
     margin: 0px 10px;
@@ -54,10 +56,18 @@ tr {
     background-color: #0b223c;
 }
 
-.percentualeVerde { color: green !important;}
-.percentualeRossa { color: brown; }
+.percentualeVerde {
+    color: green !important;
+}
+
+.percentualeRossa {
+    color: brown;
+}
 
 
+.text-center {
+    text-align: center;
+}
 
 /* Media Queries */
 @media only screen and (min-width: 1300px) {
@@ -69,6 +79,10 @@ tr {
 @media only screen and (max-width: 799px) {
     table {
         font-size: 0.8em;
+    }
+
+    .extra-data {
+        display: none;
     }
 }
 
@@ -84,13 +98,6 @@ tr {
         max-width: 1200px;
     }
 }
-
-@media only screen and (max-width: 599px) {
-    .extra-data {
-        display: none;
-    }
-}
-
 
 @media only screen and (max-width: 599px) {
     table {

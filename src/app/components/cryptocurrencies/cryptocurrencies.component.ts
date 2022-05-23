@@ -29,8 +29,8 @@ export class CryptocurrenciesComponent implements OnInit {
 
   ngOnInit(): void {
     this.stampaLista();
-
   }
+
 
   stampaLista() {
     this.http.get<Coin[]>(this.api).subscribe(
@@ -63,5 +63,4 @@ export class CryptocurrenciesComponent implements OnInit {
       this.visible_pagination = true;
     }
   }
-
 }

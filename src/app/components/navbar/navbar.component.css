@@ -119,6 +119,10 @@ nav {
 
 /* mobile and tablet media queries */
 @media (max-width:850px) {
+    .progress-container {
+        display: none;
+    }
+
     nav {
         position: relative;
     }

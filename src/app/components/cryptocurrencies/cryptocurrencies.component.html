@@ -11,9 +11,10 @@
             </td>
             <td class="text-left">Symbol</td>
             <td>Price</td>
-            <td>24H Change</td>
+            <td class="text-center">24H Change</td>
             <td class="extra-data">24H High</td>
             <td class="extra-data">24H Low</td>
+            <td class="extra-data">&nbsp;</td>
         </tr>
     </thead>
     <tbody *ngFor="let coin of coinsFiltrate| paginate: { itemsPerPage: 20, currentPage: page }">
@@ -25,13 +26,13 @@
             <td>
                 {{coin.name}}
             </td>
-            <td class="text-center">
+            <td>
                 {{coin.symbol | uppercase}}
             </td>
             <td [ngClass]="{percentualeVerde: coin.price_change_percentage_24h > 0}" class="percentualeRossa">
                 {{coin.current_price | currency: 'USD'}}
             </td>
-            <td [ngClass]="{percentualeVerde: coin.price_change_percentage_24h > 0}" class="percentualeRossa">
+            <td [ngClass]="{percentualeVerde: coin.price_change_percentage_24h > 0}" class="percentualeRossa text-center">
                 {{coin.price_change_percentage_24h | number: '1.0-1'}}&percnt;
             </td>
             <td [ngClass]="{percentualeVerde: coin.price_change_percentage_24h > 0}"
@@ -42,6 +43,9 @@
                 class="percentualeRossa extra-data">
                 {{coin.low_24h | currency: 'USD'}}
             </td>
+            <td class="extra-data">
+                <i class="fa-solid fa-money-bill-transfer"></i>
+            </td>
         </tr>
     </tbody>
 </table>
@@ -49,4 +53,4 @@
 <div class="my-pagination-container" *ngIf="visible_pagination == true">
     <pagination-controls class="my-pagination" (pageChange)="page = $event" (responsive)="true">
     </pagination-controls>
-</div>"
+</div>
