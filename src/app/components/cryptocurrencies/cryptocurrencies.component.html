@@ -7,7 +7,7 @@
             <!-- <td>&nbsp;</td> -->
             <td>Coin</td>
             <td>
-                <input type="text" placeholder="Search .."   (keyup)="searchCoin()" [(ngModel)]="ricerca">
+                <input type="text" placeholder="Search .." (keyup)="searchCoin()" [(ngModel)]="ricerca">
             </td>
             <td class="text-left">Symbol</td>
             <td>Price</td>
@@ -32,7 +32,8 @@
             <td [ngClass]="{percentualeVerde: coin.price_change_percentage_24h > 0}" class="percentualeRossa">
                 {{coin.current_price | currency: 'USD'}}
             </td>
-            <td [ngClass]="{percentualeVerde: coin.price_change_percentage_24h > 0}" class="percentualeRossa text-center">
+            <td [ngClass]="{percentualeVerde: coin.price_change_percentage_24h > 0}"
+                class="percentualeRossa text-center">
                 {{coin.price_change_percentage_24h | number: '1.0-1'}}&percnt;
             </td>
             <td [ngClass]="{percentualeVerde: coin.price_change_percentage_24h > 0}"

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Coin } from 'src/app/interfaces/coin';
+import { CoinsService } from 'src/app/services/coins.service';
 
 @Component({
   selector: 'app-cryptocurrencies',
@@ -8,8 +8,6 @@ import { Coin } from 'src/app/interfaces/coin';
   styleUrls: ['./cryptocurrencies.component.css']
 })
 export class CryptocurrenciesComponent implements OnInit {
-
-  api: string = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false';
 
   // variabili globlali
   ricerca: string = '';
@@ -23,28 +21,23 @@ export class CryptocurrenciesComponent implements OnInit {
   totalLength: any;
   page: number = 1;
 
-
-  constructor(private http: HttpClient) { }
-
+  constructor(private servizio: CoinsService) { }
 
   ngOnInit(): void {
     this.stampaLista();
   }
 
-
   stampaLista() {
-    this.http.get<Coin[]>(this.api).subscribe(
-      (res) => {
-        this.coins = res;
+    this.servizio.getCoins().subscribe({
+      next: (response: any) => {
+        this.coins = response;
         this.coinsFiltrate = this.coins;
 
         // pagination
-        this.totalLength = res.length;
-      },
-      (err) => console.error(err)
-    );
+        this.totalLength = response.length;
+      }
+    })
   }
-
 
   searchCoin() {
     if (this.ricerca != '') {
